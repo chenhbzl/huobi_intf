@@ -37,6 +37,12 @@
 
 ####   python3 huobi_app.py         
        (可选运行参数  --port=8005  )
+       
+###    docker镜像快捷运行方式
+* 先拉取镜像到本地服务
+docker push mpquant/huobi_intf:latest
+* 在服务器启动镜像,默认端口是8005
+docker run -d --restart=always --net host --name huobi_intf -v /etc/localtime:/etc/localtime mpquant/huobi_intf:latest
 
 启动成功后，在浏览器里输入`http://127.0.0.1:8005/info`，如果能出现下边的画面，说明启动成功了  
 ![info](/img/info.png)
@@ -56,8 +62,6 @@
 * 为了支持多交易所(币安，okex等),我们规范定义了几个核心数据格式
    * 交易对统一用 btc.usdt  ，  eth.usdt  ，    eth.btc  这样的中间加.分割的格式
    * 时间周期统一用 1d: 一天 ，  4h: 四小时 ，  60m: 60分 ，  15m:15分 ，  5m:5分 ，   1m:1分   这样的格式
-
-* 演示例子 intf_test.py
 
 ```python
 #1分钟的数据获取
