@@ -39,9 +39,9 @@
        (可选运行参数  --port=8005  )
        
 ###    docker镜像快捷运行方式
-* 先拉取镜像到本地服务
+* 先拉取镜像到本地服务器  
 docker push mpquant/huobi_intf:latest
-* 在服务器启动镜像,默认端口是8005
+* 在服务器启动镜像,默认端口是8005  
 docker run -d --restart=always --net host --name huobi_intf -v /etc/localtime:/etc/localtime mpquant/huobi_intf:latest
 
 启动成功后，在浏览器里输入`http://127.0.0.1:8005/info`，如果能出现下边的画面，说明启动成功了  
