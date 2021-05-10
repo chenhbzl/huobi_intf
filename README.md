@@ -30,10 +30,10 @@
 * 稳定，可靠，及时的行情服务器是高波动率数字货币量化交易的基础实施,我们全部开源出来，希望能帮助到大家
 
 ### 系统架构图：
-<img src="/img/构架图.jpg" width = "600" height = "400" alt="火币行情服务器架构" align=center />
+<div  align="center"> <img src="/img/构架图.jpg" width = "600" height = "400" alt="火币行情服务器架构" /> </div>
 
-### 服务器启动说明
-运行文件huobi_app.py启动服务，服务启动后就可以用程序调用所有的接口  
+### 手动部署服务
+* 安装好第三方库后，运行文件huobi_app.py启动服务
 
 ####   python3 huobi_app.py         
        (可选运行参数  --port=8005  )
