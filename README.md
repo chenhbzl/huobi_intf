@@ -45,7 +45,7 @@ docker run -d --restart=always --net host --name huobi_intf  mpquant/huobi_intf:
 ```
 
 启动成功后，在浏览器里输入`http://127.0.0.1:8005/info`，如果能出现下边的画面，说明启动成功了  
-<div  align="center"> <img src="/img/info.png" width = "300" height = "150" /> </div>
+<div  align="center"> <img src="/img/info.png" width = "450" height = "150" /> </div>
 
 
 ## 需安装第三方库 （python >= 3.6 ）
