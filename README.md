@@ -63,6 +63,7 @@ docker run -d --restart=always --net host --name huobi_intf  mpquant/huobi_intf:
    * 交易对统一用 btc.usdt  ，  eth.usdt  ，    eth.btc  这样的中间加.分割的格式
    * 时间周期统一用 1d: 一天 ，  4h: 四小时 ，  60m: 60分 ，  15m:15分 ，  5m:5分 ，   1m:1分   这样的格式
 
+> 例子演示文件 intf_test.py
 ```python
 #1分钟的数据获取
 df = get_price('btc.usdt', end_date='2021-04-25 18:56:23', count=1, frequency='1m')
@@ -90,8 +91,6 @@ df = get_price('btc.usdt', end_date='2021-04-25 18:56:23', count=10, frequency='
 ![rate](/img/rate.png)
 
 
-
-3、intf_test.py里有调用这个接口的例子
 
 ----------------------------------------------------
 
