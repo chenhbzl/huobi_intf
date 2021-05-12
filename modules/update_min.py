@@ -11,7 +11,7 @@ from modules.huobi_func import *
 #info接口,返回网页格式的币(btc和eth)的数据
 class Info(BaseHandle):
     @tornado.gen.coroutine
-    def post(self):
+    def get(self):
         result = ''
         df = pd.DataFrame()
         try:
@@ -41,9 +41,9 @@ class Info(BaseHandle):
                 table_lsit.append(code_list)
             df = pd.DataFrame(table_lsit, columns = ['币名称', 'close', '时间'])
             df.index += 1
-            df.index.name = ''
-            json_file = df.to_json(orient='index', force_ascii=False)
-            result = packet_result({}, "info", json_file)
+            del df.index.name
+            html_text1 = df.to_html(justify='center')
+            result = html_text1
         except Exception as e:
             print(repr(e))
         finally:
