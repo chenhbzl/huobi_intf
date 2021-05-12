@@ -301,10 +301,20 @@ class HuobiData(object):
                 data_list = new_price_dict[code]
                 #请求的时间和缓存里的时间不能超过30秒 
                 # get_price() 在返回价格的时候，先判断字典中最新价格是否在30秒内,如果是，直接用
-                seconds = secNums(data_list[1], end_date)
+                seconds = secNums(data_list['curr_date'], end_date)
                 if abs(seconds) < 30:
-                    print(code + '从缓存里取得数据', '缓存里的时间:' + data_list[1], '请求的时间:' + end_date)
-                    df_ret = pd.DataFrame(pd.DataFrame([{'date': self.date_timestamp_uxit(data_list[1]), 'close':data_list[0]}]))
+                    print(code + '从缓存里取得数据', '缓存里的时间:' + data_list['curr_date'], '请求的时间:' + end_date)
+                    pd_dict = {}
+                    pd_dict['date'] = self.date_timestamp_uxit(data_list['curr_date'])
+                    if 'open' in data_list.keys():
+                       pd_dict['open'] = data_list['open']
+                    if 'close' in data_list.keys():
+                       pd_dict['close'] = data_list['close']
+                    if 'low' in data_list.keys():
+                       pd_dict['low'] = data_list['low']
+                    if 'high' in data_list.keys():
+                       pd_dict['high'] = data_list['high']
+                    df_ret = pd.DataFrame(pd.DataFrame([pd_dict]))
                     df_ret.set_index('date', inplace=True)
                     df_ret.index.name = ''
                     ret = True

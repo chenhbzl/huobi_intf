@@ -142,16 +142,16 @@ class GetHuobiPrice(BaseHandle):
                             if abs(seconds) < 30:
                                 print('相差在30秒内,更新数据缓存......')
                                 code = params['security']
-                                data_list = []
+                                data_list = {}
                                 if 'close' in df.columns:
-                                    data_list.append(df['close'][0])
+                                    data_list['close'] = df['close'][0]
                                 if 'open' in df.columns:
-                                    data_list.append(df['open'][0])
+                                    data_list['open'] = df['open'][0]
                                 if 'low' in df.columns:
-                                    data_list.append(df['low'][0])
+                                    data_list['low'] = df['low'][0]
                                 if 'high' in df.columns:
-                                    data_list.append(df['high'][0])
-                                data_list.append(curr_date)
+                                    data_list['high'] = df['high'][0]
+                                data_list['curr_date'] = curr_date
                                 dbc.new_price_dict[code] = data_list
             else:
                 ret, err, df = huobi_data.get_price(**params)
