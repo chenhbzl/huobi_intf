@@ -31,7 +31,7 @@ hb_spark提供火币网(币安在开发中)的高速免费实时行情服务器(
 
 
 ### 高频实时行情服务器(huobi_High_frequency 收费版)
-* 火币websocket行情模式，当关注币种价格数据变化，会主动推送过来(20ms频率)，我们采用多个接收端密集接收， 统一发送给 huobi_intf行情服务器缓存，策略正常调用get_price()获取实时高频行情价格
+* 火币websocket行情模式，当关注币种价格数据变化，会主动推送过来(20ms频率)，我们采用多个接收端密集接收， 统一发送给 hb_spark行情服务器缓存，策略正常调用get_price()获取实时高频行情价格
    
    
 ### 数字货币回测行情服务器(huobi_backtest 收费版)
@@ -72,7 +72,7 @@ docker run -d --restart=always --net host --name huobi_intf  mpquant/huobi_intf:
    * 交易对统一用 btc.usdt  ，  eth.usdt  ，    eth.btc  这样的中间加.分割的格式
    * 时间周期统一用 1d: 一天 ，  4h: 四小时 ，  60m: 60分 ，  15m:15分 ，  5m:5分 ，   1m:1分   这样的格式
 
-> 例子演示文件 intf_test.py
+> 例子演示文件 `intf_test.py`
 ```python
 #1分钟的数据获取
 df = get_price('btc.usdt', end_date='2021-04-25 18:56:23', count=1, frequency='1m')
