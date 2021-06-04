@@ -19,7 +19,7 @@ hb_spark提供火币网(币安在开发中)的高速免费实时行情服务器(
 
 * 在本行情服务器基础上开发有增强版的本地历史行情服务器内存数据版，用来做策略回测，调参等，可以达到半年数据1分钟跑完回测看结果 (感兴趣的可以联系下面微信）
 
-* 最简函数调用 get_price(security, start_date=None, end_date=None, count=None, frequency='1d', fields=['open','close', 'low', 'high']) 具体看下面例子，懂的自然能看懂
+* 最简函数调用 `get_price(security, start_date=None, end_date=None, count=None, frequency='1d', fields=['open','close', 'low', 'high'])` 具体看下面例子，懂的自然能看懂
 
 * 行情服务器编程语言是python,采用高性能异步网络框架tornado做WebApi, 标准json返回，所有语言都能方便调用
 
