@@ -34,7 +34,7 @@ hb_spark提供火币网(币安在开发中)的高速免费实时行情服务器(
 * 火币websocket行情模式，当关注币种价格数据变化，会主动推送过来(20ms频率)，我们采用多个接收端密集接收， 统一发送给 hb_spark行情服务器缓存，策略正常调用get_price()获取实时高频行情价格
    
    
-### 数字货币回测行情服务器(huobi_backtest 收费版)
+### [数字货币回测行情服务器(huobi_backtest 收费版)](https://github.com/mpquant/huobi_backtest)
 * 根据需求，自动提前下好N年N多币种历史数据(1分钟线),回测服务器自动转换1分钟线成为日线，4小时线，1小时等，并全部调入内存数据库，以便达到每个get_price()调用 小于 1.5ms的超高速历史回测行情，用最短的时间验证你的想法和策略 (从理论到实践，真金白银需要三思而行)   移步： https://github.com/mpquant/huobi_backtest
    
 
