@@ -99,7 +99,7 @@ df = get_price('btc.usdt', end_date='2021-04-25 18:56:23', count=10, frequency='
 下图是利用利用这个行情框架，跑的策略收益图 (山寨币趋势轮动策略)
 
   <div  align="center"><b>策略思想：15个主流币种轮动，选涨幅最好的前3个币种买入</b></div>
-  <div  align="center"> <img src="https://github.com/mpquant/huobi_backtest/blob/main/img/H103.jpg" width = "1200" height = "520" /> </div>
+  <div  align="center"> <img src="https://github.com/mpquant/huobi_backtest/blob/main/img/H103.jpg" width = "1200" height = "480" /> </div>
 
 
 
