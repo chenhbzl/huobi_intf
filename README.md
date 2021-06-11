@@ -50,7 +50,7 @@ python3 huobi_app.py              #(可选运行参数  --port=8005  )
 #### docker模式一键部署运行
 > 用下面一行命令在服务器运行镜像,默认端口是8005 (服务器尽量采用linux ) 
 ```  
-docker run -d --restart=always --net host --name huobi_intf  mpquant/huobi_intf:1.0
+docker run -d --restart=always --net host --name huobi_intf  mpquant/huobi_intf
 ```
 
 启动成功后，在浏览器里输入`http://127.0.0.1:8005/info`，如果能出现下边的画面，说明启动成功了  
