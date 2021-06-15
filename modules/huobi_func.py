@@ -10,6 +10,7 @@ import pandas as pd
 from public.pubfunc import secNums
 from requests.adapters import HTTPAdapter
 import urllib3
+import dbc
 from public.pubfunc import fmt_now_time, index_of_str
 urllib3.disable_warnings()
 
@@ -17,11 +18,11 @@ class HuobiData(object):
     #货币的取数据接口 api.huobi.pro(需要翻墙) api.huobi.de.com[很慢],api.hadax.com[最快](国内地址)
     api_max = 2000
     socket_max = 300
-    web_addr = 'api.hadax.com'
+    
     #https://huobiapi.github.io/docs/spot/v1/cn/#d9d514d202 接口说明
-    huobi_url = 'https://' + web_addr + '/market/history/kline?period=%s&size=%s&symbol=%s'
+    huobi_url = 'https://' + dbc.web_addr + '/market/history/kline?period=%s&size=%s&symbol=%s'
     #https://huobiapi.github.io/docs/spot/v1/cn/#k-2 接口说明
-    huobi_web_socket = 'wss://' + web_addr + '/ws'
+    huobi_web_socket = 'wss://' + dbc.web_addr + '/ws'
 
     def request_http_intf(self, params):
         # 获取request请求相关参数

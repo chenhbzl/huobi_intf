@@ -5,7 +5,8 @@ from public.rw_config  import rwcfg
 
 define("port", type=int, default=9001)
 define("debug", default="", type=bool)
-
+define("hbaddr", default="", type=str)
+ 
 r = rwcfg()#实例化配置文件读写类
 options.port = int(r.read("server", "port", 9001))
 
@@ -19,3 +20,5 @@ cache_date = datetime.datetime.now().strftime("%Y-%m-%d")
 
 #最新价格字典
 new_price_dict = {}
+
+web_addr = 'api.huobi.de.com'

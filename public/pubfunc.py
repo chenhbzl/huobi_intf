@@ -137,6 +137,18 @@ def use_debug_mode(sys_args):
                 break 
     return use
 
+def use_hbaddr_args(sys_args):
+    hbaddr = ''
+    if len(sys_args) > 1:
+        args = sys_args
+        for i in range(1, len(args)):
+            arg = args[i].lstrip("-")
+            name, equals, value = arg.partition("=")  
+            if name == 'hbaddr':
+                hbaddr = value 
+                break 
+    return hbaddr
+
 #直接截取保留的小数位数
 def digit_split(num, digit):
     num_x , num_y = str(num).split('.')

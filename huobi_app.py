@@ -4,8 +4,11 @@ import tornado.ioloop
 import tornado.options
 import tornado.web
 from tornado.options import options
+from public.pubfunc import use_hbaddr_args
 import tornado.autoreload
 import os
+import sys
+import dbc
 from urls import urls
 
 configs = {
@@ -24,6 +27,10 @@ class CustomApplication(tornado.web.Application):
 
 def create_app():
     tornado.options.parse_command_line()
+    hbaddr = use_hbaddr_args(sys.argv)
+    if hbaddr != '':
+        dbc.web_addr = hbaddr
+    print(dbc.web_addr)
     http_server = tornado.httpserver.HTTPServer(CustomApplication(configs, urls))
     http_server.listen(options.port)
     print('正在监听端口: ',options.port)

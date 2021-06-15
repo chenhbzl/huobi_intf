@@ -35,7 +35,7 @@ def Calc_Run_Time(func):            #计算用时的函数装饰器
 
 @Calc_Run_Time
 def get_info():
-    request_addr = 'http://127.0.0.1:8005'
+    request_addr = 'http://49.232.140.32:8203'
     #日数据
     df=pd.DataFrame()
     time_stamp = str(round(time.mktime(datetime.datetime.now().timetuple())))
@@ -56,7 +56,7 @@ def get_info():
         print(rstr)  
 
 def get_price(security, start_date=None, end_date=None, frequency='1d', fields=['open','close', 'low', 'high'], count=None, fq='pre'):
-    request_addr = 'http://127.0.0.1:8005'
+    request_addr = 'http://49.232.140.32:8203'
     time_stamp = str(round(time.mktime(datetime.datetime.now().timetuple())))
     df=pd.DataFrame()
     sig = create_sig('/get_price', "pc", time_stamp)
@@ -95,7 +95,4 @@ if __name__ == "__main__":
     print(df)
     #1小时的数据获取
     df = get_price('btc.usdt', end_date=fmt_now_time(), count=10, frequency='60m')
-    print(df)
-    #取到btc和eth的实时分钟线数据
-    df = get_info()
     print(df)

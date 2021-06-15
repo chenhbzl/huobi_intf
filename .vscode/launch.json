@@ -11,7 +11,8 @@
             "program": "${workspaceFolder}/huobi_app.py",
             "console": "integratedTerminal",
             "args": [
-                "--debug"
+                "--debug",
+                "--hbaddr=api.hadax.com"
             ]
         }
     ]
