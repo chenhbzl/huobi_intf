@@ -78,7 +78,7 @@ docker run -d --restart=always --net host -e HBADDR=api.huobi.pro --name huobi_i
 > 例子演示文件 `intf_test.py`
 ```python
 #1分钟的数据获取
-df = get_price('btc.usdt', end_date='2021-04-25 18:56:23', count=1, frequency='1m')
+df = get_price('btc.usdt', end_date='2021-04-25 18:56:23', count=10, frequency='1m')
 
 #日线的数据获取
 df = get_price('btc.usdt', end_date='2021-06-16 23:28:23', count=10, frequency='1d')
