@@ -48,11 +48,14 @@ python3 huobi_app.py              #(可选运行参数  --port=8005  )
 ```       
 
 #### docker模式一键部署运行
-> 用下面一行命令在服务器运行镜像,默认端口是8005 (服务器尽量采用linux ) 
+> 用下面一行命令在服务器运行镜像,默认端口是8005 (服务器尽量采用linux )，默认的火币api地址为api.huobi.de.com
 ```  
 docker run -d --restart=always --net host --name huobi_intf  mpquant/huobi_intf
 ```
-
+> 如过要修改火币api地址用下面一行命令在服务器运行镜像,加入-e HBADDR=api.hadax.com，可以修改api地址
+```  
+docker run -d --restart=always --net host -e HBADDR=api.hadax.com --name huobi_intf  mpquant/huobi_intf
+```
 启动成功后，在浏览器里输入`http://127.0.0.1:8005/info`，如果能出现下边的画面，说明启动成功了  
 <div  align="center"> <img src="/img/info.png" width = "400" height = "150" /> </div>
 
