@@ -81,18 +81,28 @@ docker run -d --restart=always --net host -e HBADDR=api.hadax.com --name huobi_i
 df = get_price('btc.usdt', end_date='2021-04-25 18:56:23', count=1, frequency='1m')
 
 #日线的数据获取
-df = get_price('btc.usdt', end_date='2021-04-25 18:56:23', count=10, frequency='1d')
+df = get_price('btc.usdt', end_date='2021-06-16 23:28:23', count=10, frequency='1d')
 
 #4小时的数据获取
-df = get_price('btc.usdt', end_date='2021-04-25 18:56:23', count=10, frequency='4h')
+df = get_price('btc.usdt', end_date='2021-06-16 23:28:23', count=10, frequency='4h')
 
 #1小时的数据获取
-df = get_price('btc.usdt', end_date='2021-04-25 18:56:23', count=10, frequency='60m')
+df = get_price('btc.usdt', end_date='2021-06-16 23:28:23', count=10, frequency='60m')
 
 ```
 
 ## btc的1分钟线
-![btc1min](/img/btc_1min.png)
+```python
+						open		close		high		low		volume
+2021-06-16 23:21:00	38714.92	38730.38	38748.85	38675.47	592926.160011
+2021-06-16 23:22:00	38730.38	38709.99	38734.30	38701.36	516773.750949
+2021-06-16 23:23:00	38710.00	38730.63	38732.01	38704.95	693360.893422
+2021-06-16 23:24:00	38730.62	38713.29	38732.49	38688.74	670397.385812
+2021-06-16 23:25:00	38713.29	38713.14	38728.11	38694.97	588707.649463
+2021-06-16 23:26:00	38712.32	38691.62	38720.20	38676.73	641196.479334
+2021-06-16 23:27:00	38691.62	38708.27	38728.08	38678.32	827388.811697
+2021-06-16 23:28:00	38708.26	38708.20	38708.27	38671.41	489209.403379
+```
 
 ## btc日线
 ![btc日线](/img/btc_1day.png)
